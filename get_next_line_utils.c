@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:48:37 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/20 20:15:34 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/21 16:01:35 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ptr[i] = s2[j];
 		i++;
 		j++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+char	*ft_strdup(const char *s)
+{
+	int		i;
+	int		size;
+	char	*ptr;
+
+	size = ft_strlen(s);
+	ptr = malloc(sizeof(char) * (size + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		ptr[i] = s[i];
+		i++;
 	}
 	ptr[i] = '\0';
 	return (ptr);
