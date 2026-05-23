@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:48:37 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/21 19:15:42 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/23 17:43:25 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	total_size;
 	char	*ptr;
