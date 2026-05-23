@@ -6,23 +6,29 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:46:18 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/21 19:23:12 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/23 16:47:53 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-    static char *pan;
+	static char	*stash;
+	char		*line;
 
-    while (pan)
-    {
-        /* read_and_save */
-        /* extract_line */
-        /* get_next_line */
-    }
-    
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		free(stash);
+		stash = NULL;
+		return (NULL);
+	}
+	stash = read_and_save(fd, stash);
+	if (!stash)
+		return (NULL);
+	line = extract_line(stash);
+	stash = clean_stash(stash);
+	return (line);
 }
 char	*extract_line(char *stash)
 {
@@ -76,4 +82,23 @@ char	*read_and_save(int fd, char *stash)
 	}
 	free(buffer);
 	return (stash);
+}
+
+char	*clean_stash(char *stash)
+{
+	char	*new_stash;
+	int		i;
+
+	i = 0;
+	while (stash[i] && stash[i] != '\n')
+		i++;
+	if (!stash[i])
+	{
+		free(stash);
+		return (NULL);
+	}
+	i++;
+	new_stash = ft_strdup(&stash[i]);
+	free(stash);
+	return (new_stash);
 }
