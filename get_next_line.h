@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:29:56 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/23 17:44:33 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/23 19:13:39 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,13 @@ char	*get_next_line(int fd);
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s1);
+char	*clean_stash(char *stash);
+char	*read_and_save(int fd, char *stash);
+char	*extract_line(char *stash);
+
+
+
 
 #endif
