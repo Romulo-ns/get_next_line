@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:54:30 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/24 18:44:20 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:47:35 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
-		free(stash);
+		free(stash[fd]);
 		stash[fd] = NULL;
 		return (NULL);
 	}
