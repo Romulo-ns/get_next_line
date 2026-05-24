@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:54:30 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/24 18:20:12 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:44:20 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	stash[fd] = read_and_save(fd, stash[fd]);
-	if (!stash)
+	if (!stash[fd])
 		return (NULL);
 	line = extract_line(stash[fd]);
 	stash[fd] = clean_stash(stash[fd]);
