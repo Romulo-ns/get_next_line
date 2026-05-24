@@ -6,28 +6,28 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:54:30 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/24 17:56:16 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:20:12 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
+	static char	*stash[OPEN_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		free(stash);
-		stash = NULL;
+		stash[fd] = NULL;
 		return (NULL);
 	}
-	stash = read_and_save(fd, stash);
+	stash[fd] = read_and_save(fd, stash[fd]);
 	if (!stash)
 		return (NULL);
-	line = extract_line(stash);
-	stash = clean_stash(stash);
+	line = extract_line(stash[fd]);
+	stash[fd] = clean_stash(stash[fd]);
 	return (line);
 }
 

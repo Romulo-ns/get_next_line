@@ -6,12 +6,12 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:54:21 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/24 17:54:44 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/24 18:19:46 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
