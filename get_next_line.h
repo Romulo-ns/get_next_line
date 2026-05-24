@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:29:56 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/23 19:13:39 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/24 14:26:51 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,5 @@ char	*ft_strdup(const char *s1);
 char	*clean_stash(char *stash);
 char	*read_and_save(int fd, char *stash);
 char	*extract_line(char *stash);
-
-
-
 
 #endif
