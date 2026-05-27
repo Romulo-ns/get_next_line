@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:54:21 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/05/24 19:28:49 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/05/24 19:39:29 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr = malloc(sizeof(char) * (total_size + 1));
 	if (!ptr)
 		return (NULL);
-	i = 0;
+	i = -1;
 	while (++i < len1)
 		ptr[i] = s1[i];
 	j = 0;
